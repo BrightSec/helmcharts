@@ -57,6 +57,21 @@ entries:
     version: 0.0.1
   ao-https-with-header:
   - apiVersion: v2
+    created: "2026-10-21T06:20:27.301898379Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/ao-https-with-header
+    digest: 8f82d251aa8756f667f6f1e1d4bb44bd6bb0a108ff32a3f4d829990cbbaa801a
+    keywords:
+    - ao-https-with-header
+    name: ao-https-with-header
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/ao-https-with-header-0.0.3/ao-https-with-header-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2026-02-02T14:14:12.231426452Z"
     dependencies:
     - name: simple-service
@@ -72,6 +87,22 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ao-https-with-header-0.0.1/ao-https-with-header-0.0.1.tgz
     version: 0.0.1
   ao-reauth-triggers:
+  - apiVersion: v2
+    created: "2026-10-21T06:20:27.476785039Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/ao-reauth-triggers
+    digest: e822d920c46bdfa164c3e9a5288559adabe7c66205f533239ad72ced9d386ae7
+    keywords:
+    - ao-reauth-triggers
+    - ao-triggers
+    name: ao-reauth-triggers
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/ao-reauth-triggers-0.0.3/ao-reauth-triggers-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2025-10-10T14:42:43.8233173Z"
     dependencies:
@@ -90,6 +121,21 @@ entries:
     version: 0.0.1
   ao-sms-otp:
   - apiVersion: v2
+    created: "2026-10-21T06:20:27.688712939Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/ao-sms-otp
+    digest: 8b27b74fae3cf6f49187dd2def8fb5bf1e4f031ce0e75e33b93ff00084b5f880
+    keywords:
+    - ao-sms-otp
+    name: ao-sms-otp
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/ao-sms-otp-0.0.3/ao-sms-otp-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2026-07-09T07:19:15.143532952Z"
     dependencies:
     - name: simple-service
@@ -105,6 +151,22 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ao-sms-otp-0.0.1/ao-sms-otp-0.0.1.tgz
     version: 0.0.1
   auto-resolve:
+  - apiVersion: v2
+    created: "2026-10-21T06:20:27.932003665Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: https://github.com/brightsec/mock-servers
+    digest: bc4267d511cca2e10c8f560aca1d718c2e69d77dbc748718f97a583c3d1750a3
+    keywords:
+    - auto-resolve
+    - ar
+    name: auto-resolve
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/auto-resolve-0.0.3/auto-resolve-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2025-12-24T15:57:25.4487492Z"
     dependencies:
@@ -286,6 +348,22 @@ entries:
     version: 0.0.1
   benchmarking-webdriver-target:
   - apiVersion: v2
+    created: "2026-10-21T06:20:28.167964753Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: benchmarking-webdriver-target
+    digest: 15c404a081c494ff3b2cc9dfc878238bc2dfef21cfde8db20ef830574f10e78a
+    keywords:
+    - benchmarking-webdriver-target
+    - bwt
+    name: benchmarking-webdriver-target
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/benchmarking-webdriver-target-0.0.4/benchmarking-webdriver-target-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2024-11-12T09:46:33.996724522Z"
     dependencies:
     - name: simple-service
@@ -318,6 +396,20 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-webdriver-target-0.0.1/benchmarking-webdriver-target-0.0.1.tgz
     version: 0.0.1
   brokencrystals:
+  - apiVersion: v2
+    created: "2026-10-21T06:20:28.346482586Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 8261f61a15c5a1209d10bb70fe752969a15431e7baa508fdd0f776fa408536b9
+    icon: https://raw.githubusercontent.com/brightsec/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/brokencrystals-0.1.65/brokencrystals-0.1.65.tgz
+    version: 0.1.65
   - apiVersion: v2
     created: "2026-09-03T07:36:34.034032949Z"
     description: 'Benchmark application that uses modern technologies and implements
@@ -2370,6 +2462,21 @@ entries:
     version: 1.0.0
   dynamiclinkserver:
   - apiVersion: v2
+    created: "2026-10-21T06:20:28.924072605Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: 'Mock server to test crawling on a target with links, which appear
+      on the ''load'' event, after a small delay and on different user interactions. '
+    digest: 6b72b0cbe747e2fc80058faa0d4826f708886bde2778f0df65de8edab49ff27b
+    keywords:
+    - dynamiclinkserver
+    name: dynamiclinkserver
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dynamiclinkserver-0.0.5/dynamiclinkserver-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
     created: "2024-02-06T05:59:57.965306997Z"
     dependencies:
     - name: simple-service
@@ -2431,6 +2538,19 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/fider-static-otp-0.1.0/fider-static-otp-0.1.0.tgz
     version: 0.1.0
   flood-testing:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-10-21T06:20:29.152674697Z"
+    description: A Helm chart for Kubernetes
+    digest: dcae3e3e37a5f65222e5427aa1049958c34e65029cf90703838caa88b2f45513
+    keywords:
+    - flood-testing
+    - ft
+    name: flood-testing
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/flood-testing-1.0.2/flood-testing-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2024-11-27T15:17:25.768706543Z"
@@ -2956,6 +3076,18 @@ entries:
     version: 0.0.1
   mock-subdomain-server:
   - apiVersion: v2
+    created: "2026-10-21T06:20:29.384252769Z"
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/subdomain-server
+    digest: 1b379927601725d9f94786d46ce9ca058fe712d15fcba52c2d44361fce9e0d7a
+    keywords:
+    - mock-subdomain-server
+    - mss
+    name: mock-subdomain-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/mock-subdomain-server-1.0.6/mock-subdomain-server-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
     created: "2024-05-30T07:20:15.091165636Z"
     description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/subdomain-server
     digest: 08d9378437657d633e199d03a1c46e4de0e91d95130258a53f9089799f207a8e
@@ -3321,6 +3453,24 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/python-xxe-0.0.1/python-xxe-0.0.1.tgz
     version: 0.0.1
   rate-limit-server:
+  - apiVersion: v2
+    created: "2026-10-21T06:20:29.571182076Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: 'This mock server implements rate-limiting logic, immitating real-life
+      scenarious, which can be faced by crawler, during exploration of various web
+      sites '
+    digest: 83fb1b99c88851dcb559935872e8c65c0134cb818a2a125a24db81fe41a34736
+    keywords:
+    - rate-limit-server
+    - rls
+    name: rate-limit-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/rate-limit-server-0.0.3/rate-limit-server-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2025-10-03T09:37:03.824971137Z"
     dependencies:
@@ -3928,6 +4078,18 @@ entries:
   stresstesting-api:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-10-21T06:20:29.767155416Z"
+    description: A Helm chart for Kubernetes
+    digest: 50586a993cfff73c83fd41746c8bab9b1a0f6231407a62957891931d768217c2
+    keywords:
+    - stresstesting-api
+    name: stresstesting-api
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/stresstesting-api-1.0.5/stresstesting-api-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-03-31T06:35:53.9691158Z"
     description: A Helm chart for Kubernetes
     digest: 5f68d1713fdf14267e6deac5403d75bc63bd60e93c9f4c6f52956f5cfbd2642b
@@ -4108,6 +4270,24 @@ entries:
   stresstesting-repeater:
   - apiVersion: v2
     appVersion: latest
+    created: "2026-10-21T06:20:29.942650224Z"
+    description: 'Bright Security Stress Test Repeater - Helm chart for deploying
+      the Bright CLI repeater for stress testing purposes. This chart runs a dedicated
+      bridge/repeater that allows stress tests to be executed through a controlled
+      connection. '
+    digest: 3aebd99b74d1099f8d1d8e2ad8a4641a93bf9786c745e9d1e6c8863f855ff356
+    keywords:
+    - stresstesting
+    - stresstesting-bridges
+    - repeater
+    - bridge
+    name: stresstesting-repeater
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/stresstesting-repeater-0.1.1/stresstesting-repeater-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2026-02-09T08:50:38.918958464Z"
     description: 'Bright Security Stress Test Repeater - Helm chart for deploying
       the Bright CLI repeater for stress testing purposes. This chart runs a dedicated
@@ -4125,6 +4305,22 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-repeater-0.1.0/stresstesting-repeater-0.1.0.tgz
     version: 0.1.0
   stresstesting-webdriver:
+  - apiVersion: v2
+    created: "2026-10-21T06:20:30.184576931Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: https://github.com/brightsec/mock-servers
+    digest: a0896e748c6c8a4b0e05a2de05a71583c84722118d99c74f814180e7cec38a0a
+    keywords:
+    - stresstesting-webdriver
+    - stress-web
+    name: stresstesting-webdriver
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/stresstesting-webdriver-0.0.4/stresstesting-webdriver-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     created: "2024-11-28T09:16:39.548396582Z"
     dependencies:
@@ -4418,6 +4614,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-tomcat-0.0.1/vulhub-tomcat-0.0.1.tgz
     version: 0.0.1
   vulnerablesamlapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-10-21T06:20:30.479214048Z"
+    description: A Helm chart for Kubernetes
+    digest: 16385d12d829e88bf9fe8c5a13ad43333ae8e8bfa1dfdab15b7eb7795ed87ac4
+    keywords:
+    - saml
+    name: vulnerablesamlapp
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/vulnerablesamlapp-1.0.8/vulnerablesamlapp-1.0.8.tgz
+    version: 1.0.8
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2025-07-02T16:24:10.512499325Z"
@@ -4739,4 +4947,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-07T12:21:12.912097478Z"
+generated: "2026-10-21T06:20:30.479627645Z"
