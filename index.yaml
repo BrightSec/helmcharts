@@ -397,6 +397,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2026-10-26T13:20:33.226959638Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 05641d68e38626134cc3a495b60dd0086dbbaceeb8864612dd8ab46e4d2259ee
+    icon: https://raw.githubusercontent.com/brightsec/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/brokencrystals-0.1.66/brokencrystals-0.1.66.tgz
+    version: 0.1.66
+  - apiVersion: v2
     created: "2026-10-21T06:20:28.346482586Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -2120,6 +2134,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
     version: 0.1.7
+  dating-app:
+  - apiVersion: v2
+    created: "2026-10-26T13:20:33.430008528Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: https://github.com/BrightSec/dating_app
+    digest: be4dc18c2363744701c5525a40ca68b01da3778d7da8d2ce9eb71f385779922a
+    keywords:
+    - dating-app
+    name: dating-app
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dating-app-0.0.1/dating-app-0.0.1.tgz
+    version: 0.0.1
   definitely-secure-bank:
   - apiVersion: v2
     created: "2024-02-15T13:56:31.454148514Z"
@@ -4947,4 +4977,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-21T06:20:30.479627645Z"
+generated: "2026-10-26T13:20:33.430347011Z"
