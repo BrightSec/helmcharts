@@ -1,0 +1,11 @@
+apiVersion: v2
+name: dating-app
+description: https://github.com/BrightSec/dating_app
+type: application
+keywords:
+- dating-app
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.5.0
+  repository: "file://../../simple-service"

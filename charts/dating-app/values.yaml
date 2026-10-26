@@ -1,0 +1,19 @@
+simple-service:
+  application:
+    image: ghcr.io/brightsec/dating_app
+    port: 3000
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 512Mi
+    livenessProbe:
+      tcpSocket:
+        port: 3000
+      initialDelaySeconds: 30
+      periodSeconds: 30
+    startupProbe:
+      tcpSocket:
+        port: 3000
