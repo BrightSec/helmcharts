@@ -1,15 +1,14 @@
 ---
-# The proxy read timeout (600s) must stay above the scanner's request budget:
-# otherwise the proxy answers 504 first and /blackhole-* stop being timeouts
-# for the engine.
+# Engine raises IO::TimeoutError after 40s per attempt (DEFAULT_IO_TIMEOUT in
+# nexploit src/session/client/crystal.cr); +10s so the proxy never 504s first.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "50"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "50"
     nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     {{ if eq .Values.ingress.cert "" }}
