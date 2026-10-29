@@ -1,0 +1,10 @@
+# JSON array of users, e.g. [{"username":"john","password":"password","domain":"mydomain"}]
+# When empty, the server uses its default users: john/password, mydomain\jane/password
+ntlmUsers: ""
+tests:
+  image: nicolaka/netshoot:v0.13
+  # Route53 authoritative name servers of the nexploit.app zone (ns-*.awsdns-*),
+  # queried directly to bypass the cluster DNS and resolver caches
+  dnsServers: "205.251.193.249 205.251.195.221 205.251.198.188 205.251.197.13"
+  # How long to wait for the DNS record and the NLB to become available
+  timeoutSeconds: 600

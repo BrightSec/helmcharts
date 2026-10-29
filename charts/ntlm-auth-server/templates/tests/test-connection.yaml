@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Release.Name }}-test-connection
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    helm.sh/hook: test
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+spec:
+  restartPolicy: Never
+  containers:
+    - name: test
+      image: {{ .Values.tests.image }}
+      env:
+        - name: HOST
+          value: {{ .Release.Name }}.nlb.brokencrystals.nexploit.app
+        - name: DNS_SERVERS
+          value: {{ .Values.tests.dnsServers | quote }}
+        - name: TIMEOUT
+          value: {{ .Values.tests.timeoutSeconds | quote }}
+        - name: TEST_DEFAULT_USERS
+          value: {{ empty .Values.ntlmUsers | quote }}
+      command: ["/bin/bash", "-c"]
+      args:
+        - |
+          set -u
+          deadline=$(( $(date +%s) + TIMEOUT ))
+
+          # 1. Resolve the name via Route53 authoritative servers, not the cluster DNS
+          ips=""
+          while [ -z "$ips" ]; do
+            for ns in $DNS_SERVERS; do
+              ips=$(dig +short +time=3 +tries=1 A "$HOST" @"$ns" | grep -E '^[0-9.]+$' | sort)
+              [ -n "$ips" ] && break
+            done
+            if [ -z "$ips" ]; then
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "FAIL: $HOST is not resolvable"; exit 1; }
+              echo "waiting for DNS record $HOST ..."; sleep 10
+            fi
+          done
+          echo "OK: $HOST resolves to" $ips
+
+          # 2. curl every NLB IP, keeping the original Host. Right after creation
+          # the NLB may serve traffic on its IPs intermittently, so wait until
+          # each IP answers 12 times in a row with a 5 second step.
+          req() { curl -s -m 10 -o /dev/null -w '%{http_code}' --resolve "$HOST:80:$ip" "$@"; }
+          for ip in $ips; do
+            ok=0
+            while [ $ok -lt 12 ]; do
+              if [ "$(req "http://$HOST/")" = "200" ]; then
+                ok=$((ok + 1))
+              else
+                [ $ok -gt 0 ] && echo "[$ip] GET / failed after $ok successes, restarting"
+                ok=0
+              fi
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "FAIL: http://$HOST/ is not stable via $ip"; exit 1; }
+              [ $ok -lt 12 ] && sleep 5
+            done
+            echo "OK: [$ip] GET / -> 200 twelve times in a row"
+          done
+
+          fail=0
+          check() {
+            expected=$1; name=$2; shift 2
+            code=$(req "$@")
+            if [ "$code" = "$expected" ]; then echo "OK: [$ip] $name -> $code"; else echo "FAIL: [$ip] $name -> $code, expected $expected"; fail=1; fi
+          }
+          for ip in $ips; do
+            check 401 "GET /protected without auth" "http://$HOST/protected"
+            check 401 "GET /protected with wrong password" --ntlm -u 'john:wrong' "http://$HOST/protected"
+            if [ "$TEST_DEFAULT_USERS" = "true" ]; then
+              check 200 "GET /protected as john" --ntlm -u 'john:password' "http://$HOST/protected"
+              check 200 "GET /protected as MYDOMAIN\\jane" --ntlm -u 'MYDOMAIN\jane:password' "http://$HOST/protected"
+            fi
+          done
+          exit $fail

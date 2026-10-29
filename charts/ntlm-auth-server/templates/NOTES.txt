@@ -1,0 +1,11 @@
+NTLM auth server is exposed through an AWS NLB on port 80:
+
+  http://{{ .Release.Name }}.nlb.brokencrystals.nexploit.app
+  http://{{ .Release.Name }}.nlb.brokencrystals.nexploit.app/protected
+
+The NLB and its DNS record may take a few minutes to become available.
+Check with: helm test {{ .Release.Name }} -n {{ .Release.Namespace }} --timeout {{ .Values.tests.timeoutSeconds }}s --logs
+{{- if not .Values.ntlmUsers }}
+
+Default users: john / password, mydomain\jane / password
+{{- end }}
