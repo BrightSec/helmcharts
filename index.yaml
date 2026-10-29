@@ -395,6 +395,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-webdriver-target-0.0.1/benchmarking-webdriver-target-0.0.1.tgz
     version: 0.0.1
+  blackhole-server:
+  - apiVersion: v2
+    created: "2026-10-29T19:08:17.214711305Z"
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/blackhole-server
+    digest: 80b10ba2e0a2806ae15133eb3248773d20cf4ac555f381f1720c9e2832fe5d07
+    keywords:
+    - blackhole-server
+    - bhs
+    name: blackhole-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/blackhole-server-0.1.0/blackhole-server-0.1.0.tgz
+    version: 0.1.0
   brokencrystals:
   - apiVersion: v2
     created: "2026-10-29T09:41:03.53824545Z"
@@ -5004,4 +5017,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-29T09:41:03.760582171Z"
+generated: "2026-10-29T19:08:17.215103347Z"
