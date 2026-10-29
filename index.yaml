@@ -397,6 +397,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2026-10-29T09:41:03.53824545Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 6e02b697b1fce064e580d140612e84bc68fde7cfff878045f58c6a3cab453fd8
+    icon: https://raw.githubusercontent.com/brightsec/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/brokencrystals-0.1.68/brokencrystals-0.1.68.tgz
+    version: 0.1.68
+  - apiVersion: v2
     created: "2026-10-26T13:20:33.226959638Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -3202,6 +3216,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/nexploit-benchmarking-target-1.0.0/nexploit-benchmarking-target-1.0.0.tgz
     version: 1.0.0
+  ntlm-auth-server:
+  - apiVersion: v2
+    created: "2026-10-29T09:41:03.75976401Z"
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/ntlm-auth-server
+    digest: f710e4ac6c349916de1adf220a89fb99e31458bdd384531d783e864a2268fb00
+    keywords:
+    - ntlm-auth-server
+    - nas
+    name: ntlm-auth-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/ntlm-auth-server-0.1.0/ntlm-auth-server-0.1.0.tgz
+    version: 0.1.0
   oscar-sample-webstore:
   - apiVersion: v2
     created: "2025-04-02T11:42:05.16054377Z"
@@ -4977,4 +5004,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-26T13:20:33.430347011Z"
+generated: "2026-10-29T09:41:03.760582171Z"
