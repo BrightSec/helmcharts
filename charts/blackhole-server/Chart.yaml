@@ -1,0 +1,8 @@
+apiVersion: v2
+name: blackhole-server
+description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/blackhole-server
+type: application
+keywords:
+- blackhole-server
+- bhs
+version: 0.1.0

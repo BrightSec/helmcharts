@@ -1,0 +1,16 @@
+ingress:
+  url: dev.vuln.nexploit.app
+  cert: ""
+  authlevel: "."
+image:
+  repository: ghcr.io/brightsec/blackhole-server
+  tag: latest
+port: 3000
+# Passed to the container as is. Healthy entry points: /ok-0 .. /ok-(OK_COUNT-1),
+# blackhole entry points: /blackhole-0 .. /blackhole-(BLACKHOLE_COUNT-1).
+# An invalid count makes the server exit with code 1.
+env:
+  OK_COUNT: 1
+  BLACKHOLE_COUNT: 4
+  # Logs one line per request, including "held" and "released after <s>"
+  NODE_DEBUG: blackhole-server
