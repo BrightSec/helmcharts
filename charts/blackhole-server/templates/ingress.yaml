@@ -1,13 +1,15 @@
 ---
-# The proxy read timeout (ingress-nginx default 60s) must stay above the
-# scanner's ~40s request budget: otherwise the proxy answers 504 first and
-# /blackhole-* stop being timeouts for the engine.
+# The proxy read timeout (600s) must stay above the scanner's request budget:
+# otherwise the proxy answers 504 first and /blackhole-* stop being timeouts
+# for the engine.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     {{ if eq .Values.ingress.cert "" }}
