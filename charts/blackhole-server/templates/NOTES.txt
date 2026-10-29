@@ -1,0 +1,6 @@
+Blackhole server is available at https://{{ .Values.ingress.url }}/
+
+  OK_COUNT={{ .Values.env.OK_COUNT }}: healthy entry points /ok-{i}
+  BLACKHOLE_COUNT={{ .Values.env.BLACKHOLE_COUNT }}: entry points /blackhole-{i} that never answer
+
+/ and /healthz always answer, do not use them as scan entry points.
