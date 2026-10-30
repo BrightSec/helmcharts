@@ -397,6 +397,18 @@ entries:
     version: 0.0.1
   blackhole-server:
   - apiVersion: v2
+    created: "2026-10-30T05:42:46.181554468Z"
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/blackhole-server
+    digest: 7c3191f5f1bd6ad1f9e2433c261c32216445c6e17ad562e280a2438e0cfec3e8
+    keywords:
+    - blackhole-server
+    - bhs
+    name: blackhole-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/blackhole-server-0.1.1/blackhole-server-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     created: "2026-10-29T19:08:17.214711305Z"
     description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/blackhole-server
     digest: 80b10ba2e0a2806ae15133eb3248773d20cf4ac555f381f1720c9e2832fe5d07
@@ -5017,4 +5029,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-29T19:08:17.215103347Z"
+generated: "2026-10-30T05:42:46.182014424Z"
