@@ -10,8 +10,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     nginx.ingress.kubernetes.io/proxy-next-upstream: "off"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "50"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "50"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "180"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "180"
     nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     {{ if eq .Values.ingress.cert "" }}
