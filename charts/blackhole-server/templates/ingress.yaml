@@ -1,12 +1,15 @@
 ---
 # Engine raises IO::TimeoutError after 40s per attempt (DEFAULT_IO_TIMEOUT in
 # nexploit src/session/client/crystal.cr); +10s so the proxy never 504s first.
+# Retries are off: otherwise the controller re-sends a timed out request
+# (proxy-next-upstream includes "timeout"), holding the backend several times.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
+    nginx.ingress.kubernetes.io/proxy-next-upstream: "off"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "50"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "50"
     nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
