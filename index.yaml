@@ -3255,6 +3255,18 @@ entries:
     version: 1.0.0
   ntlm-auth-server:
   - apiVersion: v2
+    created: "2026-11-03T11:20:01.170136756Z"
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/ntlm-auth-server
+    digest: a261c6f5bb9b68ce84fdb2505124de0377a70bec64cc5bc5c77645812b19a5ef
+    keywords:
+    - ntlm-auth-server
+    - nas
+    name: ntlm-auth-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/ntlm-auth-server-0.2.0/ntlm-auth-server-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2026-10-29T09:41:03.75976401Z"
     description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/ntlm-auth-server
     digest: f710e4ac6c349916de1adf220a89fb99e31458bdd384531d783e864a2268fb00
@@ -5041,4 +5053,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-10-30T09:53:43.226018425Z"
+generated: "2026-11-03T11:20:01.170621477Z"
