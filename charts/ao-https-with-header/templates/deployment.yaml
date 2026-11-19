@@ -1,0 +1,89 @@
+{{- if .Values.nlb.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        # The server reads the CA only at startup.
+        checksum/client-ca: {{ .Values.clientCA | sha256sum }}
+    spec:
+      containers:
+        - name: ao-https-with-header
+          image: {{ .Values.nlb.image }}
+          imagePullPolicy: Always
+          env:
+            - name: HTTP_PORT
+              value: "8443"
+            # Images built before this setting existed ignore it and always pin.
+            - name: CLIENT_CERT_PINNING
+              value: {{ include "ao-https-with-header.pinning" . | quote }}
+            - name: CLIENT_CERT_CHECK
+              value: {{ include "ao-https-with-header.check" . | quote }}
+          ports:
+            - name: https
+              containerPort: 8443
+              protocol: TCP
+          # Files go over the image's built-in certificate paths, so that every
+          # image version picks them up.
+          volumeMounts:
+            - name: tls
+              mountPath: /home/node/app/assets/certs/server-cert.pem
+              subPath: server-cert.pem
+              readOnly: true
+            - name: tls
+              mountPath: /home/node/app/assets/certs/server-key.pem
+              subPath: server-key.pem
+              readOnly: true
+            {{- if .Values.clientCA }}
+            - name: client-ca
+              mountPath: /home/node/app/assets/certs/ca-cert.pem
+              subPath: ca.pem
+              readOnly: true
+            {{- end }}
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              memory: 512Mi
+          # TCP only: every HTTPS request must present a client certificate.
+          startupProbe:
+            tcpSocket:
+              port: 8443
+          livenessProbe:
+            tcpSocket:
+              port: 8443
+            initialDelaySeconds: 10
+            periodSeconds: 30
+      volumes:
+        - name: tls
+          secret:
+            secretName: {{ required "nlb.tlsSecretName is required" .Values.nlb.tlsSecretName }}
+            items:
+              - key: tls.crt
+                path: server-cert.pem
+              - key: tls.key
+                path: server-key.pem
+        {{- if .Values.clientCA }}
+        - name: client-ca
+          configMap:
+            name: {{ .Release.Name }}-client-ca
+        {{- end }}
+      restartPolicy: Always
+      imagePullSecrets:
+        - name: pull-ghcr-io
+{{- end }}

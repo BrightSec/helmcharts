@@ -4,8 +4,10 @@ description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-serv
 type: application
 keywords:
   - ao-https-with-header
-version: 0.0.3
+version: 0.1.0
 dependencies:
   - name: simple-service
     version: 0.5.0
     repository: "file://../../simple-service"
+    # Off in NLB mode, which renders its own deployment and service.
+    condition: simple-service.enabled

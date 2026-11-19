@@ -1,0 +1,113 @@
+{{- if .Values.nlb.enabled }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Release.Name }}-test-connection
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    helm.sh/hook: test
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+spec:
+  restartPolicy: Never
+  containers:
+    - name: test
+      image: {{ .Values.tests.image }}
+      env:
+        - name: HOST
+          value: {{ .Release.Name }}.nlb.brokencrystals.nexploit.app
+        - name: DNS_SERVERS
+          value: {{ .Values.tests.dnsServers | quote }}
+        - name: TIMEOUT
+          value: {{ .Values.tests.timeoutSeconds | quote }}
+      {{- if .Values.clientCA }}
+      volumeMounts:
+        - name: client-ca
+          mountPath: /etc/client-ca
+          readOnly: true
+      {{- end }}
+      command: ["/bin/bash", "-c"]
+      args:
+        - |
+          set -u
+          deadline=$(( $(date +%s) + TIMEOUT ))
+
+          # 1. Resolve the name via Route53 authoritative servers, not the cluster DNS
+          ips=""
+          while [ -z "$ips" ]; do
+            for ns in $DNS_SERVERS; do
+              ips=$(dig +short +time=3 +tries=1 A "$HOST" @"$ns" | grep -E '^[0-9.]+$' | sort)
+              [ -n "$ips" ] && break
+            done
+            if [ -z "$ips" ]; then
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "FAIL: $HOST is not resolvable"; exit 1; }
+              echo "waiting for DNS record $HOST ..."; sleep 10
+            fi
+          done
+          echo "OK: $HOST resolves to" $ips
+
+          # The CAs the server must ask the client for: proof that TLS reaches the
+          # server itself (passthrough) and that it uses the configured client CA.
+          # Without clientCA: the image's built-in CA, matched by its common name.
+          expected="MyCompany Root CA"
+          exact=false
+          if [ -f /etc/client-ca/ca.pem ]; then
+            exact=true
+            expected=$(openssl crl2pkcs7 -nocrl -certfile /etc/client-ca/ca.pem | openssl pkcs7 -print_certs -noout | sed -n 's/^subject=//p')
+          fi
+          handshake() {
+            echo | timeout 15 openssl s_client -connect "$ip:443" -servername "$HOST" \
+              -verify_hostname "$HOST" -verify_return_error 2>&1
+          }
+
+          # 2. Right after creation the NLB may serve traffic on its IPs
+          # intermediately, so wait until each IP completes 12 handshakes in a row
+          # with a 5 second step.
+          for ip in $ips; do
+            ok=0
+            while [ $ok -lt 12 ]; do
+              if handshake | grep -q "Acceptable client certificate CA names"; then
+                ok=$((ok + 1))
+              else
+                [ $ok -gt 0 ] && echo "[$ip] handshake failed after $ok successes, restarting"
+                ok=0
+              fi
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "FAIL: $HOST is not stable via $ip"; exit 1; }
+              [ $ok -lt 12 ] && sleep 5
+            done
+            echo "OK: [$ip] 12 handshakes in a row"
+          done
+
+          fail=0
+          for ip in $ips; do
+            out=$(handshake)
+            # The server certificate must be valid for the public name.
+            if echo "$out" | grep -q "Verify return code: 0 (ok)"; then
+              echo "OK: [$ip] server certificate is valid for $HOST"
+            else
+              echo "FAIL: [$ip] server certificate:"; echo "$out" | grep -E "Verify return code|subject="; fail=1
+            fi
+            # The DN lines after the heading, up to the next "Name: value" line or "---".
+            names=$(echo "$out" | awk '/^Acceptable client certificate CA names/ {on=1; next} on && (/: / || /^---/) {exit} on')
+            while IFS= read -r name; do
+              if { $exact && echo "$names" | grep -qxF "$name"; } || { ! $exact && echo "$names" | grep -qF "$name"; }; then
+                echo "OK: [$ip] server requests client certificates from: $name"
+              else
+                echo "FAIL: [$ip] server does not request client certificates from: $name"; echo "$names"; fail=1
+              fi
+            done <<< "$expected"
+            # Without a client certificate the handshake must fail: no HTTP status.
+            code=$(curl -s -m 10 -o /dev/null -w '%{http_code}' --resolve "$HOST:443:$ip" "https://$HOST/")
+            if [ "$code" = "000" ]; then
+              echo "OK: [$ip] GET / without a client certificate is rejected"
+            else
+              echo "FAIL: [$ip] GET / without a client certificate -> $code"; fail=1
+            fi
+          done
+          exit $fail
+  {{- if .Values.clientCA }}
+  volumes:
+    - name: client-ca
+      configMap:
+        name: {{ .Release.Name }}-client-ca
+  {{- end }}
+{{- end }}

@@ -1,0 +1,10 @@
+{{- if and .Values.nlb.enabled .Values.clientCA }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-client-ca
+  namespace: {{ .Release.Namespace }}
+data:
+  ca.pem: |
+{{ .Values.clientCA | indent 4 }}
+{{- end }}

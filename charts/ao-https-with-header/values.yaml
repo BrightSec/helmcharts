@@ -1,4 +1,8 @@
+# Default mode: the generic simple-service deployment behind ingress-nginx.
+# ingress-nginx terminates TLS itself, so client certificates never reach the
+# server there. For mTLS, use the NLB mode below with simple-service.enabled=false.
 simple-service:
+  enabled: true
   ingress:
     enabled: false
   application:
@@ -21,3 +25,40 @@ simple-service:
     startupProbe:
       tcpSocket:
         port: 8080
+
+# NLB mode: an L4 AWS NLB on 443 passes TLS through to the server, which
+# terminates it and verifies the client certificate itself.
+# Served at https://<release>.nlb.brokencrystals.nexploit.app
+nlb:
+  enabled: false
+  image: ghcr.io/brightsec/ao-https-with-header:latest
+  # kubernetes.io/tls secret (tls.crt / tls.key) in the release namespace with
+  # the server certificate; it must cover <release>.nlb.brokencrystals.nexploit.app.
+  tlsSecretName: nlbwildcard
+
+# PEM bundle of the CAs whose client certificates are accepted: every
+# intermediate plus the root, because the server rejects a chain that ends at
+# an intermediate. Set with --set-file clientCA=<file>. Empty: the image's
+# built-in "MyCompany Root CA". NLB mode only.
+clientCA: ""
+
+# "true": accept only the image's built-in alice@example.com certificate.
+# "false": accept any certificate issued by clientCA; needs an image with
+# CLIENT_CERT_PINNING support, older images always pin (403 for other certs).
+# Empty: "false" when clientCA is set, "true" otherwise. NLB mode only.
+# Ignored with clientCertCheck=exact.
+clientCertPinning: ""
+
+# "ca": the client certificate must be issued by a CA in clientCA.
+# "exact": clientCA lists the accepted client certificates themselves; any
+# other certificate, even one from the same CA, is rejected. Needs an image
+# with CLIENT_CERT_CHECK support. NLB mode only.
+clientCertCheck: ca
+
+tests:
+  image: nicolaka/netshoot:v0.13
+  # Route53 authoritative name servers of the nexploit.app zone (ns-*.awsdns-*),
+  # queried directly to bypass the cluster DNS and resolver caches
+  dnsServers: "205.251.193.249 205.251.195.221 205.251.198.188 205.251.197.13"
+  # How long to wait for the DNS record and the NLB to become available
+  timeoutSeconds: 600
