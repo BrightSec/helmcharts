@@ -31,6 +31,9 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
+      annotations:
+        # Ship nodejs logs to OpenSearch as plain text instead of parsed JSON.
+        fluentbit.io/parser-nodejs: empty
       labels:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app: {{ .Release.Name }}
