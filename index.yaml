@@ -1231,6 +1231,20 @@ entries:
     version: 0.0.71
   brokencrystals-unstable:
   - apiVersion: v2
+    created: "2026-11-19T06:19:20.024313373Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: f34ac623fb03c7d3001d9cba060c1f09d29cdebc6332d2a0eecfe274a50b3059
+    icon: https://raw.githubusercontent.com/brightsec/brokencrystals-unstable/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals-unstable
+    - brkn-unstbl
+    name: brokencrystals-unstable
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/brokencrystals-unstable-0.1.69/brokencrystals-unstable-0.1.69.tgz
+    version: 0.1.69
+  - apiVersion: v2
     created: "2026-07-27T15:05:59.388775874Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -5408,4 +5422,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-11-19T06:13:57.496856639Z"
+generated: "2026-11-19T06:19:25.715655537Z"
