@@ -397,6 +397,18 @@ entries:
     version: 0.0.1
   blackhole-server:
   - apiVersion: v2
+    created: "2026-11-19T06:13:50.403505717Z"
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/blackhole-server
+    digest: 6f249ea87338e1dbe61e87ce2188c469639908a1a843e5779c0aa67f1f78878c
+    keywords:
+    - blackhole-server
+    - bhs
+    name: blackhole-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/blackhole-server-0.1.3/blackhole-server-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
     created: "2026-10-30T09:53:43.22532809Z"
     description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/blackhole-server
     digest: d54572d2b99ade1c77610dd37a85079a2a9b0d15a6cdf1427e6e2c87651e4930
@@ -433,6 +445,20 @@ entries:
     - https://github.com/BrightSec/helmcharts/releases/download/blackhole-server-0.1.0/blackhole-server-0.1.0.tgz
     version: 0.1.0
   brokencrystals:
+  - apiVersion: v2
+    created: "2026-11-19T06:13:50.698099767Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 5dd92510dd6797cb7a2a077e3c8350b473e0461615ea3d50d44dd7150059c361
+    icon: https://raw.githubusercontent.com/brightsec/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/brokencrystals-0.1.69/brokencrystals-0.1.69.tgz
+    version: 0.1.69
   - apiVersion: v2
     created: "2026-10-29T09:41:03.53824545Z"
     description: 'Benchmark application that uses modern technologies and implements
@@ -1947,6 +1973,18 @@ entries:
   crapi:
   - apiVersion: v2
     appVersion: main
+    created: "2026-11-19T06:13:50.945498415Z"
+    description: A Helm chart for Kubernetes
+    digest: 7e54ac31191691c355c46e7eb077584feba3fc60a98bda74da2b2a80c9d9afde
+    keywords:
+    - crapi
+    name: crapi
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/crapi-0.1.27/crapi-0.1.27.tgz
+    version: 0.1.27
+  - apiVersion: v2
+    appVersion: main
     created: "2025-10-16T09:19:09.005814345Z"
     description: A Helm chart for Kubernetes
     digest: 43c94abb526264c2677aedf05f3ac23fef506f0f340996185c1fc49837c676d1
@@ -2240,6 +2278,18 @@ entries:
   dvga:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:51.162181174Z"
+    description: A Helm chart for Kubernetes
+    digest: 43e1dec02ad103f7de94b6274f330e137214f472537e199ab5ff338ae6fe92e1
+    keywords:
+    - dvga
+    name: dvga
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvga-1.0.2/dvga-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-02-06T05:59:57.321705127Z"
     description: A Helm chart for Kubernetes
     digest: 7121fe79723a15883d4b2b41254aea118ac88a9ed7bdc79b412479aed5292b12
@@ -2265,6 +2315,18 @@ entries:
   dvna:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:51.399249427Z"
+    description: A Helm chart for Kubernetes
+    digest: 3fa9e1baf37fc5d18e25f6250d52ea0599ee72f87bbe621b8fe06faf0db76667
+    keywords:
+    - dvna
+    name: dvna
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvna-1.0.2/dvna-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-02-06T05:59:57.476106189Z"
     description: A Helm chart for Kubernetes
     digest: 1b759c14958ac36acb5643f56a48c4fb4d67b30ef8baf22e43f55a1f34522eb7
@@ -2288,6 +2350,22 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvna-1.0.0/dvna-1.0.0.tgz
     version: 1.0.0
   dvwa:
+  - apiVersion: v2
+    created: "2026-11-19T06:13:51.616688814Z"
+    description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment. '
+    digest: 02d40b2246721601dece6a344b159d55b7c9f72e6cf64ea9b7bcbdbc6f80d745
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvwa-0.0.8/dvwa-0.0.8.tgz
+    version: 0.0.8
   - apiVersion: v2
     created: "2026-04-24T12:05:05.87461882Z"
     description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
@@ -2403,6 +2481,20 @@ entries:
   dvwa-medium-security:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:51.916012781Z"
+    description: A Helm chart for Kubernetes
+    digest: 14679643a94605d83d56453f6f13f2c9260ca21a67614575dd215b683b472e27
+    keywords:
+    - dvwa-medium-security
+    - dvwa-ms
+    - dms
+    name: dvwa-medium-security
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvwa-medium-security-1.0.1/dvwa-medium-security-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-03-25T20:57:41.729987622Z"
     description: A Helm chart for Kubernetes
     digest: 00d2eb06768bb901c9e6adafe134f795968636d13d8b3eeff6191f650cb8fb31
@@ -2416,6 +2508,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-medium-security-1.0.0/dvwa-medium-security-1.0.0.tgz
     version: 1.0.0
   dvwp:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2026-11-19T06:13:52.176262788Z"
+    description: Damn Vulnerable WordPress
+    digest: 3b598b26e2b2a7267fce689dd8382daf788bd8090566ec72b404d1eb12cae8bc
+    keywords:
+    - dvwp
+    name: dvwp
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvwp-0.0.10/dvwp-0.0.10.tgz
+    version: 0.0.10
   - apiVersion: v2
     appVersion: 0.0.1
     created: "2025-07-15T10:22:26.008577597Z"
@@ -2531,6 +2635,18 @@ entries:
   dvwsnode:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:52.543732173Z"
+    description: A Helm chart for Kubernetes
+    digest: 709efc859ef7cbf4399a6f41dbd2b5fdccbc111f24c84bc77aaed4b623042ddb
+    keywords:
+    - dvwsnode
+    name: dvwsnode
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvwsnode-1.0.1/dvwsnode-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-02-17T19:52:18.130904779Z"
     description: A Helm chart for Kubernetes
     digest: 56e1dcc3e7d4c0f7b2c2db554e9c8e39ec4d87a8e816b0c257163c4d1ca01727
@@ -2590,6 +2706,19 @@ entries:
   facade:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:52.897928811Z"
+    description: A Helm chart for Kubernetes IMPORTANT! For some reason you have to
+      wait 4 minutes after deployment for app to work properly and load all containers.
+    digest: 3600c0731b97f2d43bb8bef8efd8aa31ce2e0d4abfae5b63df06f236e76f3c30
+    keywords:
+    - facade
+    name: facade
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/facade-1.0.1/facade-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-02-19T13:45:20.680127392Z"
     description: A Helm chart for Kubernetes IMPORTANT! For some reason you have to
       wait 4 minutes after deployment for app to work properly and load all containers.
@@ -2602,6 +2731,22 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/facade-1.0.0/facade-1.0.0.tgz
     version: 1.0.0
   fider-static-otp:
+  - apiVersion: v2
+    appVersion: v0.33.0
+    created: "2026-11-19T06:13:53.127109356Z"
+    description: 'Fider (static-OTP benchmark build) — a feedback/idea-board app paired
+      with a Mailhog SMTP catcher, used as an authentication/OTP DAST test target. '
+    digest: ae9162539dfd4e99b9b2b9c1e011b3db670ace498a3046d52ad6d6d897b276af
+    keywords:
+    - fider
+    - otp
+    - static-otp
+    - mailhog
+    name: fider-static-otp
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/fider-static-otp-0.1.1/fider-static-otp-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: v0.33.0
     created: "2026-09-03T07:36:34.248633714Z"
@@ -2619,6 +2764,19 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/fider-static-otp-0.1.0/fider-static-otp-0.1.0.tgz
     version: 0.1.0
   flood-testing:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-11-19T06:13:53.364741165Z"
+    description: A Helm chart for Kubernetes
+    digest: e3e79d8ad026cea29b114c0f7a2ebbd8fc76c02dfa8461c943f9d680a8bb4c74
+    keywords:
+    - flood-testing
+    - ft
+    name: flood-testing
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/flood-testing-1.0.3/flood-testing-1.0.3.tgz
+    version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2026-10-21T06:20:29.152674697Z"
@@ -2659,6 +2817,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/flood-testing-1.0.0/flood-testing-1.0.0.tgz
     version: 1.0.0
   hackazon:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-11-19T06:13:53.584345792Z"
+    description: A Helm chart for Kubernetes
+    digest: 42dc2d60832919e33ddc8a0bf8ae3f495093ac32636a53ea1290aade1b51db66
+    keywords:
+    - hackazon
+    name: hackazon
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/hackazon-1.0.1/hackazon-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2024-02-17T16:58:21.544941515Z"
@@ -3007,6 +3177,18 @@ entries:
   ldap-injection:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:53.815529095Z"
+    description: A Helm chart for Kubernetes ldap-injection app
+    digest: f5943ff44797370805312a608af9858aa40fd7afdfb1e497d196fffe26a0a548
+    keywords:
+    - ldap-injection
+    name: ldap-injection
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/ldap-injection-1.0.2/ldap-injection-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-04-02T08:56:13.189421386Z"
     description: A Helm chart for Kubernetes ldap-injection app
     digest: 36294201c6c562d45ec0a9e22accc8c3a50e078e4cabf285503f99ff70a8cdaa
@@ -3145,6 +3327,18 @@ entries:
   mcp-everything:
   - apiVersion: v2
     appVersion: latest
+    created: "2026-11-19T06:13:54.045347551Z"
+    description: Deploy the MCP everything server over streamable HTTP
+    digest: 6a57838efdd749abafebb7ca7dec2fd93ab3bd55c1b9b608a502e2cb1e2f53ce
+    keywords:
+    - mcp-everything
+    name: mcp-everything
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/mcp-everything-0.0.2/mcp-everything-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: latest
     created: "2026-04-07T20:29:36.418982884Z"
     description: Deploy the MCP everything server over streamable HTTP
     digest: f35bcc95c97e82928e227a8acaffab7590c6c345055ab94c355f1b3cdbaa88f9
@@ -3156,6 +3350,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/mcp-everything-0.0.1/mcp-everything-0.0.1.tgz
     version: 0.0.1
   mock-subdomain-server:
+  - apiVersion: v2
+    created: "2026-11-19T06:13:54.25979537Z"
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/subdomain-server
+    digest: 29cad5622ac644aca784c81191f05e4473e90b92b26cee8cf392c0a7eae00fa1
+    keywords:
+    - mock-subdomain-server
+    - mss
+    name: mock-subdomain-server
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/mock-subdomain-server-1.0.7/mock-subdomain-server-1.0.7.tgz
+    version: 1.0.7
   - apiVersion: v2
     created: "2026-10-21T06:20:29.384252769Z"
     description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/subdomain-server
@@ -3280,6 +3486,19 @@ entries:
     version: 0.1.0
   oscar-sample-webstore:
   - apiVersion: v2
+    created: "2026-11-19T06:13:54.587213655Z"
+    description: Oscar is an e-commerce framework for Django designed for building
+      domain-driven sites.
+    digest: dc4b1a464793dbd33f3858a2805e0c19dba10254499614625f28bba605209903
+    keywords:
+    - oscar-sample-webstore
+    - oscar
+    name: oscar-sample-webstore
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/oscar-sample-webstore-0.0.2/oscar-sample-webstore-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2025-04-02T11:42:05.16054377Z"
     description: Oscar is an e-commerce framework for Django designed for building
       domain-driven sites.
@@ -3293,6 +3512,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/oscar-sample-webstore-0.0.1/oscar-sample-webstore-0.0.1.tgz
     version: 0.0.1
   owasp-benchmark:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-11-19T06:13:54.840004849Z"
+    description: A Helm chart for Kubernetes
+    digest: 17261d7ea256d44261303d578f67f1d7bd394b1008614eceda4288dbc262e1d4
+    keywords:
+    - owaspbenchmark
+    name: owasp-benchmark
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/owasp-benchmark-1.0.4/owasp-benchmark-1.0.4.tgz
+    version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2025-11-21T11:57:08.198622696Z"
@@ -3446,6 +3677,18 @@ entries:
   pixi:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:55.118661066Z"
+    description: A Helm chart for Kubernetes
+    digest: fa15ea862f8a7c2567ab1686d199e35f94afe82efc5646202ac1a1d2ffdb4971
+    keywords:
+    - pixi
+    name: pixi
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/pixi-1.0.1/pixi-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-02-17T22:47:47.357036634Z"
     description: A Helm chart for Kubernetes
     digest: 695caa38c288ed656ccb593189cdca059a94ac7adfc94861e9232cfb0bdbbbf1
@@ -3597,6 +3840,17 @@ entries:
     version: 0.0.1
   securebank:
   - apiVersion: v2
+    created: "2026-11-19T06:13:55.461385142Z"
+    description: 'securebank '
+    digest: 8b8e3869c72ef18a89128f488bf146b1fea4d4d6c879cf06f2fd2e9c04a942d0
+    keywords:
+    - securebank
+    name: securebank
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/securebank-0.0.2/securebank-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2025-07-24T13:14:22.599490534Z"
     description: 'securebank '
     digest: aea85eb4495bbf64ed9accded1ac418a3d230132f467b487d2a6761201b64c3c
@@ -3608,6 +3862,17 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/securebank-0.0.1/securebank-0.0.1.tgz
     version: 0.0.1
   sqli:
+  - apiVersion: v2
+    created: "2026-11-19T06:13:55.687547062Z"
+    description: A Helm chart for Kubernetes
+    digest: 8ef74444c995c00dc62e955a7c497f10d79fe0ef610908d04ec5e2aa268c2286
+    keywords:
+    - sqli
+    name: sqli
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/sqli-1.0.20/sqli-1.0.20.tgz
+    version: 1.0.20
   - apiVersion: v2
     created: "2026-10-07T12:21:12.911352757Z"
     description: A Helm chart for Kubernetes
@@ -4184,6 +4449,18 @@ entries:
   stresstesting-api:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:55.918976137Z"
+    description: A Helm chart for Kubernetes
+    digest: 5c8933b5d4ddaaf9c012309dd00e82505668a28504f81d42c87b6e35fa1444fa
+    keywords:
+    - stresstesting-api
+    name: stresstesting-api
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/stresstesting-api-1.0.6/stresstesting-api-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-10-21T06:20:29.767155416Z"
     description: A Helm chart for Kubernetes
     digest: 50586a993cfff73c83fd41746c8bab9b1a0f6231407a62957891931d768217c2
@@ -4231,6 +4508,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-api-1.0.2/stresstesting-api-1.0.2.tgz
     version: 1.0.2
   stresstesting-bridges-api:
+  - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2026-11-19T06:13:56.19964096Z"
+    description: A Helm chart for Kubernetes
+    digest: 5ee04af914f4c2862f1fb8a38d5091de9fe6b41757daace13ffcce1ca02f55f6
+    keywords:
+    - stresstesting-bridges-api
+    name: stresstesting-bridges-api
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/stresstesting-bridges-api-1.2.1/stresstesting-bridges-api-1.2.1.tgz
+    version: 1.2.1
   - apiVersion: v2
     appVersion: 1.2.0
     created: "2026-02-11T15:19:44.32214754Z"
@@ -4316,6 +4605,25 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-bridges-api-1.0.0/stresstesting-bridges-api-1.0.0.tgz
     version: 1.0.0
   stresstesting-bridges-load-generator:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2026-11-19T06:13:56.450514075Z"
+    description: 'Bright Security Stress Test Bridges Load Generator - Helm chart
+      for deploying the Locust-based load generator for stress testing bridges/repeaters.
+      This chart runs load tests to stress test the bridge infrastructure with configurable
+      behavioral patterns and resource allocations. '
+    digest: 0caf100b788fb1eee251d1076dddcbd4017a9b77cbc821572b5d7cbeb2d7a347
+    keywords:
+    - stresstesting
+    - stresstesting-bridges
+    - load-generator
+    - locust
+    - stress-test
+    name: stresstesting-bridges-load-generator
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/stresstesting-bridges-load-generator-1.0.1/stresstesting-bridges-load-generator-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: latest
     created: "2026-02-13T15:57:23.526323359Z"
@@ -4459,6 +4767,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-webdriver-0.0.1/stresstesting-webdriver-0.0.1.tgz
     version: 0.0.1
   university:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-11-19T06:13:56.735191329Z"
+    description: A Helm chart for Kubernetes
+    digest: 77730aae8ba001e0728bb7a85b2dc51be24279a6fcac0ec243cb74e8b4e65995
+    keywords:
+    - university
+    name: university
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/university-1.0.4/university-1.0.4.tgz
+    version: 1.0.4
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2024-02-06T06:00:00.862830684Z"
@@ -4722,6 +5042,18 @@ entries:
   vulnerablesamlapp:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:56.968873532Z"
+    description: A Helm chart for Kubernetes
+    digest: 31e07cc4f0424cba2efa08aad290820b150ca3267735d59f9af2b23be9706272
+    keywords:
+    - saml
+    name: vulnerablesamlapp
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/vulnerablesamlapp-1.0.9/vulnerablesamlapp-1.0.9.tgz
+    version: 1.0.9
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-10-21T06:20:30.479214048Z"
     description: A Helm chart for Kubernetes
     digest: 16385d12d829e88bf9fe8c5a13ad43333ae8e8bfa1dfdab15b7eb7795ed87ac4
@@ -4862,6 +5194,18 @@ entries:
   webgoat:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-11-19T06:13:57.243688218Z"
+    description: Vulnerable app for testing apps based on Java
+    digest: f25a7b723e714311dedeefff6bf5cc06543ff9781be59341ffeb4dcb7beeabd5
+    keywords:
+    - webgoat
+    name: webgoat
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/webgoat-0.0.6/webgoat-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-11-12T13:35:29.146293914Z"
     description: Vulnerable app for testing apps based on Java
     digest: 5d6ccea0243684f0dce9c4a1c8211180c963a4414a00a13788e1fa92b1e2844f
@@ -4934,6 +5278,17 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/webgoat-0.0.1/webgoat-0.0.1.tgz
     version: 0.0.1
   webhooks-receiver:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2026-11-19T06:13:57.496342563Z"
+    description: A Helm chart for Kubernetes deployment with self-signed certificate
+    digest: af9fc8c0d22382255e840ab7e8de3ede9c56f2b1df388925767bd1f612eb8b87
+    keywords:
+    - webhooks-receiver
+    name: webhooks-receiver
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/webhooks-receiver-0.0.8/webhooks-receiver-0.0.8.tgz
+    version: 0.0.8
   - apiVersion: v2
     appVersion: "1.0"
     created: "2026-06-11T10:16:18.561044259Z"
@@ -5053,4 +5408,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-11-03T11:20:01.170621477Z"
+generated: "2026-11-19T06:13:57.496856639Z"
