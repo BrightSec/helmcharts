@@ -1,0 +1,3 @@
+ingress:
+  url: dev.vuln.nexploit.app
+  cert: ""

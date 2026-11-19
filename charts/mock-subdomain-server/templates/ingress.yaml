@@ -7,8 +7,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.org/ssl-redirect: "False"
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
 spec:
   ingressClassName: nginx
@@ -38,8 +37,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.org/ssl-redirect: "False"
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
 spec:
   ingressClassName: nginx

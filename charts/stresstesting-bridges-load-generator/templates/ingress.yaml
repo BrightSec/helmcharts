@@ -7,9 +7,6 @@ metadata:
   labels:
     {{- include "stresstesting-bridges-load-generator.labels" . | nindent 4 }}
   annotations:
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     {{- if eq .Values.ingress.cert "" }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{- end }}

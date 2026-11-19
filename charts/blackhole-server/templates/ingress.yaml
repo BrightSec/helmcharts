@@ -9,11 +9,10 @@ metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
-    nginx.ingress.kubernetes.io/proxy-next-upstream: "off"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "180"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "180"
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.org/ssl-redirect: "False"
+    nginx.org/proxy-next-upstream: "off"
+    nginx.org/proxy-read-timeout: "180s"
+    nginx.org/proxy-send-timeout: "180s"
     {{ if eq .Values.ingress.cert "" }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}

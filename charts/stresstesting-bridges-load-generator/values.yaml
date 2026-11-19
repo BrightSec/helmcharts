@@ -87,7 +87,7 @@ ingress:
   annotations: {}
     # Additional custom annotations can be added here
     # Example:
-    # nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8"
+    # konghq.com/plugins: ip-restriction
 
 # Service account configuration
 serviceAccount:

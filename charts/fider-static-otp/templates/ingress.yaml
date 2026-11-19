@@ -15,20 +15,22 @@ metadata:
     {{- if $sharedIngressAnnotations }}
     {{- range $key, $value := $sharedIngressAnnotations }}
     {{- if eq $ingressClass "nginx" }}
-    {{- if hasPrefix "nginx.ingress.kubernetes.io" $key }}
+    {{- if hasPrefix "nginx.org/" $key }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
     {{- else }}
-    {{- if not (hasPrefix "nginx.ingress.kubernetes.io" $key) }}
+    {{- if not (hasPrefix "nginx.org/" $key) }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
     {{- end }}
     {{- end }}
     {{- end }}
     {{- if .Values.ingress.rateLimiting.enabled }}
-    nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.rps | quote }}
-    nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
-    nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
+    nginx.org/limit-req-rate: {{ printf "%vr/s" .Values.ingress.rateLimiting.rps | quote }}
+    nginx.org/limit-req-burst: {{ mul .Values.ingress.rateLimiting.rps .Values.ingress.rateLimiting.burstMultiplier | quote }}
+    nginx.org/limit-req-no-delay: "true"
+    nginx.org/limit-req-reject-code: "429"
+    nginx.org/policies: {{ $fullName }}-connection-limit
     {{- end }}
     {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
@@ -66,20 +68,22 @@ metadata:
     {{- if $sharedIngressAnnotations }}
     {{- range $key, $value := $sharedIngressAnnotations }}
     {{- if eq $ingressClass "nginx" }}
-    {{- if hasPrefix "nginx.ingress.kubernetes.io" $key }}
+    {{- if hasPrefix "nginx.org/" $key }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
     {{- else }}
-    {{- if not (hasPrefix "nginx.ingress.kubernetes.io" $key) }}
+    {{- if not (hasPrefix "nginx.org/" $key) }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
     {{- end }}
     {{- end }}
     {{- end }}
     {{- if .Values.ingress.rateLimiting.enabled }}
-    nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.smtpRps | quote }}
-    nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
-    nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
+    nginx.org/limit-req-rate: {{ printf "%vr/s" .Values.ingress.rateLimiting.smtpRps | quote }}
+    nginx.org/limit-req-burst: {{ mul .Values.ingress.rateLimiting.smtpRps .Values.ingress.rateLimiting.burstMultiplier | quote }}
+    nginx.org/limit-req-no-delay: "true"
+    nginx.org/limit-req-reject-code: "429"
+    nginx.org/policies: {{ $fullName }}-connection-limit
     {{- end }}
     {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod

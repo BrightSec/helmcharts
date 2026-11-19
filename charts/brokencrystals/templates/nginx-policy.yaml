@@ -1,0 +1,15 @@
+{{- if and .Values.ingress.url .Values.ingress.rateLimiting.enabled }}
+# Connection limit per client IP for F5 NGINX Ingress Controller,
+# attached to the Ingresses via nginx.org/policies.
+apiVersion: k8s.nginx.org/v1
+kind: Policy
+metadata:
+  name: {{ include "brokencrystals.fullname" . }}-connection-limit
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "brokencrystals.labels" . | nindent 4 }}
+spec:
+  connectionLimit:
+    connections: {{ int .Values.ingress.rateLimiting.connections }}
+    rejectCode: 429
+{{- end }}

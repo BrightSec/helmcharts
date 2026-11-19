@@ -12,5 +12,5 @@ keywords:
 - load-generator
 - locust
 - stress-test
-version: 1.0.0
+version: 1.0.1
 appVersion: "latest"

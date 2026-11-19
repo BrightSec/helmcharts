@@ -24,9 +24,8 @@ ingress:
   cert: ""
   className: "nginx"
   annotations:
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.org/ssl-redirect: "True"
+    nginx.org/proxy-read-timeout: "300s"
   tls:
     enabled: true
     autoGenerate: true
