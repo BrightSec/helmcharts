@@ -150,6 +150,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ao-sms-otp-0.0.1/ao-sms-otp-0.0.1.tgz
     version: 0.0.1
+  ao-with-crlf-sensible-target:
+  - apiVersion: v2
+    created: "2026-11-24T12:24:41.223608483Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.1
+    description: A Helm chart for Kubernetes. https://github.com/brightsec/mock-servers/tree/master/apps/ao-with-crlf-sensible-target
+    digest: 220e8d51f42f2ff01de2490736db55d78d2c9a6f446b0ceaa0029cc2120536d6
+    keywords:
+    - ao-with-crlf-sensible-target
+    name: ao-with-crlf-sensible-target
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/ao-with-crlf-sensible-target-0.0.1/ao-with-crlf-sensible-target-0.0.1.tgz
+    version: 0.0.1
   auto-resolve:
   - apiVersion: v2
     created: "2026-10-21T06:20:27.932003665Z"
@@ -5496,4 +5512,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-11-24T09:49:52.574863212Z"
+generated: "2026-11-24T12:24:41.224348881Z"
