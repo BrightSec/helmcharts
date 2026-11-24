@@ -2,6 +2,24 @@ apiVersion: v1
 entries:
   altoroj:
   - apiVersion: v2
+    created: "2026-11-24T13:39:31.058530604Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.2
+    description: 'AltoroJ is a sample banking J2EE web application. AltoroJ uses standard
+      Java & JSP functionality without relying on any additional frameworks. AltoroJ
+      uses Apache Derby as its SQL database that is automatically initialized the
+      first time you log into AltoroJ via its web interface. '
+    digest: 9cd346845c1f96097598f79683eba2f6275bbf91a600823b9829f4834dd7de7f
+    keywords:
+    - altoroj
+    name: altoroj
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/altoroj-0.0.6/altoroj-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
     created: "2026-01-15T18:42:43.851347401Z"
     dependencies:
     - name: simple-service
@@ -200,6 +218,25 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/auto-resolve-0.0.1/auto-resolve-0.0.1.tgz
     version: 0.0.1
   beebox:
+  - apiVersion: v2
+    created: "2026-11-24T13:39:31.305292978Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.2
+    description: bWAPP, or a buggy web application, is a free and open source deliberately
+      insecure web application. It helps security enthusiasts, developers and students
+      to discover and to prevent web vulnerabilities. bWAPP prepares one to conduct
+      successful penetration testing and ethical hacking projects.
+    digest: 123a97e6253497b57827f969232762a5a1191869277d764f1c2ab1b0eb7cd27a
+    keywords:
+    - beebox
+    - bwapp
+    name: beebox
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/beebox-0.0.8/beebox-0.0.8.tgz
+    version: 0.0.8
   - apiVersion: v2
     created: "2024-12-24T05:58:32.025595021Z"
     dependencies:
@@ -461,6 +498,20 @@ entries:
     - https://github.com/BrightSec/helmcharts/releases/download/blackhole-server-0.1.0/blackhole-server-0.1.0.tgz
     version: 0.1.0
   brokencrystals:
+  - apiVersion: v2
+    created: "2026-11-24T13:39:31.507605446Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: e09f8099f5ce2980a3c10ce09f8663981b789a556cc09d2715604d94b65558ba
+    icon: https://raw.githubusercontent.com/brightsec/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/brokencrystals-0.1.71/brokencrystals-0.1.71.tgz
+    version: 0.1.71
   - apiVersion: v2
     created: "2026-11-19T06:33:49.737196852Z"
     description: 'Benchmark application that uses modern technologies and implements
@@ -2409,6 +2460,22 @@ entries:
     version: 1.0.0
   dvwa:
   - apiVersion: v2
+    created: "2026-11-24T13:39:31.744110424Z"
+    description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment. '
+    digest: f2ab4fc38fe9a5ae9791abb9f3d5aeedc4a96e82d6d8491722bf990fa87fe792
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvwa-0.0.10/dvwa-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
     created: "2026-11-24T08:43:30.008106493Z"
     description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
       that is damn vulnerable. Its main goal is to be an aid for security professionals
@@ -3039,6 +3106,22 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/java-xxe-0.0.1/java-xxe-0.0.1.tgz
     version: 0.0.1
   juiceshop:
+  - apiVersion: v2
+    created: "2026-11-24T13:39:31.918971829Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.2
+    description: 'OWASP Juice Shop is probably the most modern and sophisticated insecure
+      web application! '
+    digest: 0038d0cde63cf2ee5096ccc70c2b281bc7d5c75e1a23166f68cb2dbbdded1430
+    keywords:
+    - juiceshop
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/juiceshop-0.0.11/juiceshop-0.0.11.tgz
+    version: 0.0.11
   - apiVersion: v2
     created: "2026-11-24T09:49:52.574282509Z"
     dependencies:
@@ -5512,4 +5595,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-11-24T12:24:41.224348881Z"
+generated: "2026-11-24T13:39:31.91947954Z"
