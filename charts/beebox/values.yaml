@@ -1,4 +1,7 @@
 simple-service:
+  podAnnotations:
+    # Keep Karpenter consolidation from evicting the target mid-test (IR-835)
+    karpenter.sh/do-not-disrupt: "true"
   application:
     image: brightsec/beebox:v6
     port: 80

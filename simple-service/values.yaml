@@ -1,5 +1,7 @@
 ingress:
   cert: "distributorwildcard"
+# Extra pod annotations, e.g. karpenter.sh/do-not-disrupt for e2e targets.
+podAnnotations: {}
 
 application:
   image: "hightechsec/docker-dvwa"
