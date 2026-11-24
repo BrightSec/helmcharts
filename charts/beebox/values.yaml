@@ -1,4 +1,7 @@
 simple-service:
+  ingress:
+    # Apache/Tomcat behind TLS termination emits absolute http redirects
+    sslRedirect: "True"
   podAnnotations:
     # Keep Karpenter consolidation from evicting the target mid-test (IR-835)
     karpenter.sh/do-not-disrupt: "true"

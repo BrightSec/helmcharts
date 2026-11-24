@@ -1,4 +1,7 @@
 simple-service:
+  ingress:
+    # Apache/Tomcat behind TLS termination emits absolute http redirects
+    sslRedirect: "True"
   application:
     image: yavuzlar/vulnlab
     port: 80
