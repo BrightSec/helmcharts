@@ -2393,6 +2393,22 @@ entries:
     version: 1.0.0
   dvwa:
   - apiVersion: v2
+    created: "2026-11-24T08:43:30.008106493Z"
+    description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment. '
+    digest: 9fab505bbdfbd86e75e0723457f4c8d045ae02679293a7ba67f16f250665d038
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvwa-0.0.9/dvwa-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v2
     created: "2026-11-19T06:13:51.616688814Z"
     description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
       that is damn vulnerable. Its main goal is to be an aid for security professionals
@@ -2521,6 +2537,20 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.2/dvwa-0.0.2.tgz
     version: 0.0.2
   dvwa-medium-security:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-11-24T08:43:30.28804082Z"
+    description: A Helm chart for Kubernetes
+    digest: 2b440f2e719af579c3eee2f08713b59e462ae0eb6a19589506a004a8ceaa3bbe
+    keywords:
+    - dvwa-medium-security
+    - dvwa-ms
+    - dms
+    name: dvwa-medium-security
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/dvwa-medium-security-1.0.2/dvwa-medium-security-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2026-11-19T06:13:51.916012781Z"
@@ -5450,4 +5480,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-11-19T06:34:00.264268682Z"
+generated: "2026-11-24T08:43:30.289340494Z"
