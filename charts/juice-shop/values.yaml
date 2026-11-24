@@ -1,4 +1,9 @@
 simple-service:
+  ingress:
+    sslRedirect: "True"
+  podAnnotations:
+    # Keep Karpenter consolidation from evicting the target mid-test (IR-835)
+    karpenter.sh/do-not-disrupt: "true"
   application:
     image: "docker.io/brightsec/juice-shop:latest"
     imagePullPolicy: Always

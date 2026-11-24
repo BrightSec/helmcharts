@@ -34,6 +34,8 @@ spec:
       annotations:
         # Ship nodejs logs to OpenSearch as plain text instead of parsed JSON.
         fluentbit.io/parser-nodejs: empty
+        # Keep Karpenter consolidation from evicting the target mid-test (IR-835)
+        karpenter.sh/do-not-disrupt: "true"
       labels:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app: {{ .Release.Name }}

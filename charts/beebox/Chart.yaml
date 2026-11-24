@@ -5,8 +5,8 @@ type: application
 keywords:
 - beebox
 - bwapp
-version: 0.0.7
+version: 0.0.8
 dependencies:
 - name: simple-service
-  version: 0.0.1
+  version: 0.5.2
   repository: "file://../../simple-service"

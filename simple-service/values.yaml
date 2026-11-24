@@ -1,5 +1,9 @@
 ingress:
   cert: "distributorwildcard"
+  # Value of nginx.org/ssl-redirect. F5 NGINX defaults to "True"; "False" keeps plain http reachable.
+  sslRedirect: "False"
+# Extra pod annotations, e.g. karpenter.sh/do-not-disrupt for e2e targets.
+podAnnotations: {}
 
 application:
   image: "hightechsec/docker-dvwa"

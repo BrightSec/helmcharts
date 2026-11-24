@@ -14,6 +14,9 @@ spec:
       app: {{ .Release.Name }}
   template:
     metadata:
+      annotations:
+        # Keep Karpenter consolidation from evicting the target mid-test (IR-835)
+        karpenter.sh/do-not-disrupt: "true"
       labels:
         app: {{ .Release.Name }}
     spec:
