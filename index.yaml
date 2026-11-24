@@ -2,6 +2,24 @@ apiVersion: v1
 entries:
   altoroj:
   - apiVersion: v2
+    created: "2026-11-24T13:40:44.632775119Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.3
+    description: 'AltoroJ is a sample banking J2EE web application. AltoroJ uses standard
+      Java & JSP functionality without relying on any additional frameworks. AltoroJ
+      uses Apache Derby as its SQL database that is automatically initialized the
+      first time you log into AltoroJ via its web interface. '
+    digest: 40ecad0cce06c2a4464e3c3461d10af2f4941bb85fef3187a5118e7cfd36c5e7
+    keywords:
+    - altoroj
+    name: altoroj
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/altoroj-0.0.7/altoroj-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
     created: "2026-11-24T13:39:31.058530604Z"
     dependencies:
     - name: simple-service
@@ -218,6 +236,25 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/auto-resolve-0.0.1/auto-resolve-0.0.1.tgz
     version: 0.0.1
   beebox:
+  - apiVersion: v2
+    created: "2026-11-24T13:40:44.838161953Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.3
+    description: bWAPP, or a buggy web application, is a free and open source deliberately
+      insecure web application. It helps security enthusiasts, developers and students
+      to discover and to prevent web vulnerabilities. bWAPP prepares one to conduct
+      successful penetration testing and ethical hacking projects.
+    digest: 0a6239d5ad331f85ea580b8bff3870c74a70598c473beae24390f38ad1d80389
+    keywords:
+    - beebox
+    - bwapp
+    name: beebox
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/beebox-0.0.9/beebox-0.0.9.tgz
+    version: 0.0.9
   - apiVersion: v2
     created: "2026-11-24T13:39:31.305292978Z"
     dependencies:
@@ -1974,6 +2011,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/chaotic-shop-0.0.1/chaotic-shop-0.0.1.tgz
     version: 0.0.1
   commix:
+  - apiVersion: v2
+    created: "2026-11-24T13:40:45.002688837Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.3
+    description: Commix app
+    digest: a4e87710d42e94f98626c9ad2e4be3e63b9ecc06ffbd408d3f6e784add33dbc9
+    keywords:
+    - commix
+    name: commix
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/commix-0.0.8/commix-0.0.8.tgz
+    version: 0.0.8
   - apiVersion: v2
     created: "2026-07-09T11:52:07.094338558Z"
     dependencies:
@@ -4050,6 +4102,17 @@ entries:
     version: 0.0.1
   sqli:
   - apiVersion: v2
+    created: "2026-11-24T13:40:45.165707188Z"
+    description: A Helm chart for Kubernetes
+    digest: ffb76afffcaa98585c8ea95c472e2301752e43b070a0b12a8c32a60954148209
+    keywords:
+    - sqli
+    name: sqli
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/sqli-1.0.21/sqli-1.0.21.tgz
+    version: 1.0.21
+  - apiVersion: v2
     created: "2026-11-19T06:13:55.687547062Z"
     description: A Helm chart for Kubernetes
     digest: 8ef74444c995c00dc62e955a7c497f10d79fe0ef610908d04ec5e2aa268c2286
@@ -5349,6 +5412,21 @@ entries:
     version: 1.0.0
   vulnlab:
   - apiVersion: v2
+    created: "2026-11-24T13:40:45.320124405Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.3
+    description: Web vulnerability lab project by Yavuzlar
+    digest: 614a6c0c97c6fc1e62c6ae2c8927a27c7317644f536820c7a44027fc25814531
+    keywords:
+    - vulnlab
+    name: vulnlab
+    type: application
+    urls:
+    - https://github.com/BrightSec/helmcharts/releases/download/vulnlab-0.0.4/vulnlab-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2024-02-06T06:00:01.351880986Z"
     dependencies:
     - name: simple-service
@@ -5595,4 +5673,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-11-24T13:39:31.91947954Z"
+generated: "2026-11-24T13:40:45.321460114Z"
