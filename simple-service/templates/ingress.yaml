@@ -6,6 +6,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.org/ssl-redirect: "False"
+    # F5 NGINX Ingress Controller only proxies WebSocket upgrades for listed services
+    nginx.org/websocket-services: "{{ .Release.Name }}"
     {{ if eq .Values.ingress.cert "" }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}
