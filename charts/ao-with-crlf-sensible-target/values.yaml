@@ -1,0 +1,22 @@
+simple-service:
+  application:
+    image: ghcr.io/brightsec/ao-with-crlf-sensible-target:latest
+    imagePullPolicy: Always
+    port: 3000
+    env:
+      HTTP_PORT: "3000"
+      AUTH_HEADER: "Header"
+      AUTH_VALUE: "Value"
+    resources:
+      requests:
+        cpu: 50m
+        memory: 100Mi
+      limits:
+        memory: 200Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 3000
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
