@@ -5,7 +5,7 @@ metadata:
   namespace: {{.Release.Namespace}}
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.org/ssl-redirect: "False"
+    nginx.org/ssl-redirect: "True"
     {{ if eq .Values.ingress.cert "" }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}

@@ -5,7 +5,7 @@ metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   annotations:
-    nginx.org/ssl-redirect: "False"
+    nginx.org/ssl-redirect: "True"
     {{ if eq .Values.ingress.cert "" }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}
