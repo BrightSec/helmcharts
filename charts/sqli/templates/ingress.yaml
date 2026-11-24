@@ -8,7 +8,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.org/ssl-redirect: "False"
+    # The app emits absolute http redirects behind TLS termination; keep the crawler on https
+    nginx.org/ssl-redirect: "True"
     nginx.org/proxy-connect-timeout: "75s"
     nginx.org/proxy-send-timeout: "360s"
     nginx.org/proxy-read-timeout: "360s"
